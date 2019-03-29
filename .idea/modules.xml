@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/test_configparser.iml" filepath="$PROJECT_DIR$/.idea/test_configparser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/..//test_configparser/../../test_log/.idea/test_configparser.iml" filepath="$PROJECT_DIR$/..//test_configparser/../../test_log/.idea/test_configparser.iml" />
+    </modules>
+  </component>
+</project>
