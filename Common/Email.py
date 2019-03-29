@@ -1,32 +1,5 @@
 # coding:utf-8
 
-# import smtplib
-# from Common.readConfig import Config
-# from email.mime.text import MIMEText  # 发送纯文本邮件
-# from email.header import Header
-#
-# sender = "924925678@qq.com"  # 发件人邮箱
-# password = "hpwhiqdjfgmabebf"  # 发件人邮箱密码
-# address_email = ("924925678@qq.com", "232975718@qq.com")  # 收件人邮箱
-#
-# def send_email():
-#     try:
-#         # 构造邮件
-#         message = MIMEText("这是邮件主体", 'plain', 'utf-8')
-#         message["From"] = Header("随风", 'utf-8')
-#         message['To'] = Header('a, b , c', "utf-8")
-#         message["Subject"] = Header("这是标题", "utf-8")
-#
-#         # 发送邮件
-#         server = smtplib.SMTP_SSL("smtp.qq.com", 465)
-#         server.login(sender, password)  #　登录
-#         server.sendmail(sender, address_email, message.as_string())
-#         server.quit()
-#     except Exception:
-#         print("邮件发送失败")
-# send_email()
-
-
 import smtplib, time
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
