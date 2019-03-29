@@ -21,7 +21,8 @@ if __name__ == '__main__':
         runner.run(all_case())
 
     time.sleep(3)
-    sender = ""
+
+    sender = "9"
     password = ""
     address_email = ""
     receivers = ",".join(address_email)
