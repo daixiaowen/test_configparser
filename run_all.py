@@ -21,9 +21,9 @@ if __name__ == '__main__':
         runner.run(all_case())
 
     time.sleep(3)
-    sender = "924925678@qq.com"
-    password = "hpwhiqdjfgmabebf"
-    address_email = "924925678@qq.com", "531461379@qq.com", "1252391027@qq.com"
+    sender = ""
+    password = ""
+    address_email = ""
     receivers = ",".join(address_email)
 
     send_email(sender, password, receivers, report_real_path)
