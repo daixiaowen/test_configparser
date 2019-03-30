@@ -4,6 +4,7 @@ import unittest, requests
 from Common.base_test import webrequests
 from Common.readConfig import Config
 from Common.excel import Operate_Excel
+from Common.Decorators import decorators
 
 class Login(unittest.TestCase):
 
@@ -17,14 +18,21 @@ class Login(unittest.TestCase):
     def tearDown(self):
         print("执行用例完毕")
 
-    def login(self, url, username, password):
+    @decorators
+    def login(self, args, kwargs):
         '''登录接口'''
-        payload = {
-            "loginName": username,
-            "loginPassword": password
-        }
-        response = self.method.post(url, params=payload)
+        response = self.method.post(url=args, params=kwargs)
         return response
+
+
+    # def login(self, url, username, password):
+    #     '''登录接口'''
+    #     payload = {
+    #         "loginName": username,
+    #         "loginPassword": password
+    #     }
+    #     response = self.method.post(url, params=payload)
+    #     return response
 
     def test_login001(self):
         '''执行用例001'''
@@ -35,7 +43,13 @@ class Login(unittest.TestCase):
         excel_path = self.c.config_get("EXCEL", "path")
         user = self.excel.test_excel(excel_path, "manage_login")[0]["loginName"]
         password = self.excel.test_excel(excel_path, "manage_login")[0]["loginPassword"]
-        login_res = self.login(new_url, user, password)
+
+        payload = {
+            "loginName": user,
+            "loginPassword": password
+        }
+
+        login_res = self.login(new_url, payload)
 
         self.assertEqual(login_res.status_code, 200)
         self.assertEqual(login_res.json()['status'], str(200), msg="断言失败")

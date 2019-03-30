@@ -22,9 +22,9 @@ if __name__ == '__main__':
 
     time.sleep(3)
 
-    sender = "9"
+    sender = ""
     password = ""
-    address_email = ""
+    address_email = []
     receivers = ",".join(address_email)
 
     send_email(sender, password, receivers, report_real_path)
